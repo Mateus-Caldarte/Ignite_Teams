@@ -19,3 +19,15 @@ export const ContainerButton = styled.View`
     flex: 1;
     justify-content: flex-end;
 `
+
+export const HeaderList = styled.View`
+    width: 100%;
+    align-items: center;
+    flex-direction: row;
+`
+export const NumberOfPlayers = styled.Text`
+    color: ${({theme}) => theme.COLORS.GRAY_200};
+    font-family: ${({theme}) => theme.FONT_FAMILY.BOLD};
+    font-size: ${({theme}) => theme.FONT_SIZE.SM}px;
+    margin-right: 3px;
+`

@@ -8,15 +8,11 @@ type Props = {
     type: ButtonStyledIconProps;
 }
 
-export const Container = styled(TouchableOpacity)`
+export const Container = styled(TouchableOpacity)` 
+    align-items: center;
+    justify-content: center;
     width: 56px;
     height: 56px;
-    justify-content: center;
-    align-items: center;
-    margin-top: 18px;
-    margin-right: 35px;
-    padding-bottom: 35px;
-    
 `
 
 export const Icon = styled(MaterialIcons).attrs<Props>(({theme, type}) => ({

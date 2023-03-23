@@ -1,12 +1,24 @@
-import { Container, Form, ContainerButton } from "./styled";
+import {
+  Container,
+  Form,
+  ContainerButton,
+  HeaderList,
+  NumberOfPlayers,
+} from "./styled";
 import { Header } from "../../components/Header";
 import { HighLight } from "../../components/HighLight";
 import { ButtonIcon } from "../../components/ButtonIcon";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
 import { Filter } from "../../components/Filter";
+import { useState } from "react";
+import { FlatList } from "react-native";
+import { PlayerCards } from "../../components/PlayerCard";
 
 export function Players() {
+  const [team, setTeam] = useState("Time A");
+  const [player, setPlayer] = useState(["Mateus", "Letícia", "Rodrigo"]);
+
   return (
     <Container>
       <Header showBackButton />
@@ -25,7 +37,27 @@ export function Players() {
         <ButtonIcon icon="add" />
       </Form>
 
-      <Filter title="Time A" isActive />
+      <HeaderList>
+        <FlatList
+          data={["Time A", "Time B"]}
+          keyExtractor={(item) => item}
+          renderItem={({ item }) => (
+            <Filter
+              title={item}
+              isActive={item === team}
+              onPress={() => setTeam(item)}
+            />
+          )}
+          horizontal
+        />
+        <NumberOfPlayers>{player.length}</NumberOfPlayers>
+      </HeaderList>
+
+      <FlatList
+        data={player}
+        keyExtractor={(item) => item}
+        renderItem={({ item }) => <PlayerCards title={item} />}
+      />
 
       <ContainerButton>
         <Button title="Remover turma" type="SECUNDARY" />
