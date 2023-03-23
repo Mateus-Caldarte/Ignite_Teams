@@ -9,7 +9,6 @@ export const Container = styled.View`
     flex-direction: row;
     align-items: center;
     margin-top: 16px;
-    margin-bottom: 16px;
     border-radius: 6px;
 `
 
