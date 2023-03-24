@@ -1,7 +1,7 @@
 import { StatusBar } from "react-native";
 import { ThemeProvider } from "styled-components";
-import { Players } from "./src/screens/Players";
 import theme from "./src/theme/";
+import { Routes } from "./src/routes";
 import {
   useFonts,
   Roboto_400Regular,
@@ -19,7 +19,7 @@ export default function App() {
         backgroundColor="transparent"
         translucent
       />
-      {fontLoaded ? <Players /> : <Loaded />}
+      {fontLoaded ? <Routes /> : <Loaded />}
     </ThemeProvider>
   );
 }
