@@ -1,3 +1,4 @@
+import { useRoute } from "@react-navigation/native";
 import {
   Container,
   Form,
@@ -16,9 +17,16 @@ import { FlatList } from "react-native";
 import { PlayerCards } from "../../components/PlayerCard";
 import { ListEmpty } from "../../components/ListEmpty";
 
+type RouteParams = {
+  group: string;
+}
+
 export function Players() {
   const [team, setTeam] = useState("Time A");
   const [player, setPlayer] = useState([]);
+
+  const route = useRoute();
+  const { group } = route.params as RouteParams
 
   return (
     <Container>
