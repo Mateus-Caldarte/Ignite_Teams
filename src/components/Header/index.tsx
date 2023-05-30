@@ -11,7 +11,7 @@ export function Header({ showBackButton }: Props) {
   const navigation = useNavigation();
 
   const handleGroups = () => {
-      navigation.navigate('groups')
+      navigation.navigate('group')
   }
 
   return (
